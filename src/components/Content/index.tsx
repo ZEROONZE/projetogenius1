@@ -12,7 +12,8 @@ const Content: React.FC<BaseLayoutProps> = ({children}) => {
   return (
       <Container>
           {children}
-    
+         
+
       </Container>
   );
 }

@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import api from './Api';
-import { Container } from './style';
+import api from '../Api';
+import { Container } from '../style';
 import { Link } from 'react-router-dom';
-import { ColorRing } from 'react-loader-spinner'
 
 
 
@@ -20,26 +19,26 @@ interface  IData {
 
 
 
-const List: React.FC= () => {
+const Foto: React.FC= () => {
   const [produtos, setProdutos] = useState< IData[]>([]);
   const [text, setText] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [endImg, setEndImg] = useState('')
 
 
 
-
-
-  function Submit() {
+  function Submit () {
   
   api.post('/send_message',  {number: '62994719784', message: text},{ headers: { "Content-Type": "application/json", "Authorization": '0uyw8haw86mzelmsug01yusrqb7raj'  } })
   .then(response => console.log(response.data))
   .catch(err => console.error(err));
 
 
-  setLoading(true);
+
+
 
   }
- 
+
+
 
 
 
@@ -48,7 +47,7 @@ const List: React.FC= () => {
  <Container>
  <div className="img-foto">
 <div className='titulo'>
-  <h1 className='titulo-two'>Envio de menssagem</h1>
+  <h1 className='titulo-two'>Envio de imagens</h1>
   <p className='titulo-tree'></p>
 </div>
 
@@ -57,12 +56,14 @@ const List: React.FC= () => {
 <form >
   <label>
     <h2>Adicione sua menssagem</h2>
+    
     <input type="text" className='text' placeholder='Menssagem' name="name" value={text} onChange={(e) => {setText(e.target.value)}} />
+    <input type="file"   className='text-two' placeholder='Url da imagem' name="image" value={endImg} onChange={(e) => {setText(e.target.value)}} />
+   
+ 
   </label>
 </form>
-{loading && <ColorRing  height={77} width={75} />} {!loading && 
 <button onClick={Submit} className="buttom">Enviar</button>
-}
 
 <div className="img-foto1">
   <div className="img-foto2">
@@ -71,16 +72,14 @@ const List: React.FC= () => {
 <div className="nome-whats1">
 <p className="nome-whats">{text}</p>
 </div>
-<br/>
-<br/>
-<br/>
 <div className="buttoms">
-<button className="buttom-text">Texto</button>
-<button className="buttom"><Link className="link" to="/foto">Imagens</Link></button>
+<button className="buttom"><Link to="/list">Texto</Link></button>
+<button className="buttom-text"><Link className="link" to="/foto">Imagens</Link></button>
 <button className="buttom">Localização</button>
 <button className="buttom">Arquivo</button>
 </div>
 </div>
+
 </div>
 </div>
 
@@ -99,4 +98,4 @@ const List: React.FC= () => {
 
 
 
-export default List;
+export default Foto;

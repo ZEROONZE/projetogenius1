@@ -19,6 +19,9 @@ opacity: 0;
 
 `;
 export const Container = styled.div`
+
+
+
 .menuu{
     z-index: 1;
     margin-left: 30px;
@@ -132,6 +135,7 @@ height: 70px;
 justify-content: center;
 text-align: center;
 align-items: center;
+
 .nome-logo{
     margin-left: 10px;
   color: ${props => props.theme.colors.white};

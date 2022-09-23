@@ -50,14 +50,17 @@ const Aside = () => {
   return (
 <Container>
 
-<SidebarNav   sidebar={sidebar}>
+<SidebarNav  sidebar={sidebar}>
+
     <Header>
     
+   
+
         <Title className="nome-logo"></Title>
         </Header>
      
         <MenuContainer>
-
+      
             <div className='menu-geral'> 
 
             <div className="menu-one">
@@ -70,7 +73,7 @@ const Aside = () => {
                     <ul className="menu">
                      <a className="menu">Contato</a>
                      </ul>
-            </div>
+                     </div>
 
 
 
@@ -84,7 +87,7 @@ const Aside = () => {
             <ul className="menu">
                      <a className="menu"  href="/list" >  Disparo único</a>
                      </ul>
-            </div>
+                     </div>
 
 
             <div className="menu-one">
@@ -122,10 +125,9 @@ const Aside = () => {
                      <a className="menu">Sair</a>
                      </ul>
                      </div>
-
-
-
                      </div>
+
+                    
         </MenuContainer>
         </SidebarNav>
     </Container>

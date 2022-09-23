@@ -8,6 +8,7 @@ import Aside from '../Aside';
 import Content from '../Content';
 import Dashboard from '../pages/Dashboard';
 import styled, {keyframes} from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 export const SidebarNav = styled.nav`
@@ -36,13 +37,22 @@ return (
 
     <Grid  sidebar={sidebar}>
         <MainHeader />
-   
+      
         <SidebarNav>
-        <FaIcons.FaBars id="btnMenu"   onClick={showSidebar} />
+       
         <Aside
         
         
-        />
+        /> 
+         
+    <input type="checkbox" class="check" id="checked" />
+    <label class="menu-btn" for="checked"  onClick={showSidebar}>
+        <span class="bar top"></span>
+        <span class="bar middle"></span>
+        <span class="bar bottom"></span>
+      
+    </label>
+    <label class="close-menu" for="checked"></label>
         </SidebarNav>
         <Content>
             { children }

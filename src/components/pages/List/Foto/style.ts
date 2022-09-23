@@ -10,23 +10,24 @@ export const Container = styled.div`
     justify-content: right;
     margin-left: 100px;
     margin-right: -20rem;
-
+    list-style: none;
     
 }
 .buttom-text{
-    
+
+    list-style: none;
     width: 10rem;
     height: 2.75rem;
     font-size: 16px;
     font-weight: 500;
-    color: #000;
+    color: rgb(255, 255, 255);
     outline: none;
     border-radius: 0.4rem;
     padding: 0.7rem 2.5rem;
     transition: all 0.2s ease 0s;
     cursor: pointer;
-    background:rgb(255, 255, 255);
-    border: 3px solid rgb(4, 170, 109);
+    background: rgb(999, 100, 109);
+    border: 1px solid rgb(4, 170, 109);
     margin-bottom: 15px;
     justify-content: center;
    align-items: center;
@@ -35,8 +36,6 @@ export const Container = styled.div`
 }
 .link{
     list-style: none;
-    text-decoration: none;
-    color: #fff;
 }
 
 .img-foto{
@@ -92,7 +91,7 @@ top:-12rem;
 
 .form{
     width: 400px;
-    height: 200px;
+    height: 500px;
     background-color: ${props => props.theme.colors.secondary};
     padding: 10px;
     justify-content: center;
@@ -125,11 +124,15 @@ top:-12rem;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+.buttom Link{
+    list-style: none; 
+
+}
 
 .buttom{
 
 
-     list-style: none; 
+    list-style: none; 
     width: 10rem;
     height: 2.75rem;
     font-size: 16px;
