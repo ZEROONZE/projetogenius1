@@ -24,11 +24,13 @@ const Foto: React.FC= () => {
   const [text, setText] = useState("");
   const [endImg, setEndImg] = useState('')
 
+  useEffect(() => {
+    Submit();
+  });
 
-
-  function Submit () {
+  async function Submit() {
   
-  api.post('/send_message',  {number: '62994719784', message: text},{ headers: { "Content-Type": "application/json", "Authorization": '0uyw8haw86mzelmsug01yusrqb7raj'  } })
+  await api.post('/send_message',  {number: '62994719784', message: text},{ headers: { "Content-Type": "application/json", "Authorization": '0uyw8haw86mzelmsug01yusrqb7raj'  } })
   .then(response => console.log(response.data))
   .catch(err => console.error(err));
 

@@ -12,21 +12,11 @@ interface  IData {
 
   number: number;
   message: string;
-  
-
 }
-
-
-
-
-
 const List: React.FC= () => {
   const [produtos, setProdutos] = useState< IData[]>([]);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
-
-
-
 
 
   function Submit() {
@@ -37,11 +27,10 @@ const List: React.FC= () => {
 
 
   setLoading(true);
-
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
   }
- 
-
-
 
   return(
     
@@ -60,8 +49,7 @@ const List: React.FC= () => {
     <input type="text" className='text' placeholder='Menssagem' name="name" value={text} onChange={(e) => {setText(e.target.value)}} />
   </label>
 </form>
-{loading && <ColorRing  height={77} width={75} />} {!loading && 
-<button onClick={Submit} className="buttom">Enviar</button>
+{loading ? <ColorRing  height={77} width={75} /> : <button onClick={Submit}  disabled={loading} className="buttom">Enviar</button>
 }
 
 <div className="img-foto1">

@@ -8,7 +8,6 @@ import Aside from '../Aside';
 import Content from '../Content';
 import Dashboard from '../pages/Dashboard';
 import styled, {keyframes} from 'styled-components';
-import { Link } from 'react-router-dom';
 
 
 export const SidebarNav = styled.nav`
